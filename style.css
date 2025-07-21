@@ -65,7 +65,7 @@ section:last-child {
 }
 
 .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('Kn2P_files/4f7d06_630941abdc664813ade7c4036db32da7~mv2.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('Kn2P_files/hero-background.jpg');
     background-size: cover;
     background-position: center;
     padding: 8rem 2rem;
