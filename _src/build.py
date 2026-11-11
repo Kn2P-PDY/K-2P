@@ -44,6 +44,53 @@ def icon(name):
     return f'<span class="icon" aria-hidden="true">{name}</span>'
 
 
+ORG = {
+    "@type": "Organization",
+    "@id": SITE + "/#organization",
+    "name": "K&2P Co., Ltd.",
+    "alternateName": ["케이앤투피", "주식회사 케이앤투피", "K&2P", "ケーアンドツーピー"],
+    "url": SITE + "/",
+    "logo": SITE + "/logo_horizontal_transparent.png",
+    "telephone": "+82-2-498-3001",
+    "taxID": "551-87-03073",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "25 Ttukseom-ro 1-gil, Halla Eco Valley 309",
+        "addressLocality": "Seongdong-gu",
+        "addressRegion": "Seoul",
+        "addressCountry": "KR",
+    },
+    "brand": {"@type": "Brand", "name": "MoriPay", "url": MORIPAY},
+    "sameAs": [MORIPAY],
+}
+
+
+def jsonld(lang, page, title, desc):
+    import json
+    graph = [ORG]
+    if page == "index":
+        graph.append({
+            "@type": "WebSite",
+            "@id": SITE + "/#website",
+            "url": SITE + "/",
+            "name": "K&2P",
+            "inLanguage": ["ko", "en", "ja"],
+            "publisher": {"@id": SITE + "/#organization"},
+        })
+    graph.append({
+        "@type": "AboutPage" if page == "about" else "WebPage",
+        "@id": page_url(lang, page) + "#webpage",
+        "url": page_url(lang, page),
+        "name": title,
+        "description": desc,
+        "inLanguage": lang,
+        "isPartOf": {"@id": SITE + "/#website"},
+        "about": {"@id": SITE + "/#organization"},
+    })
+    data = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False)
+    return f'<script type="application/ld+json">{data}</script>'
+
+
 def head(lang, page, title, desc):
     c = COMMON[lang]
     up = "../" if LANG_DIR[lang] else ""
@@ -79,7 +126,14 @@ def head(lang, page, title, desc):
 <meta property="og:description" content="{esc(desc)}">
 <meta property="og:url" content="{page_url(lang, page)}">
 <meta property="og:locale" content="{c['og_locale']}">
-<meta property="og:image" content="{SITE}/moripay_card.png">
+<meta property="og:image" content="{SITE}/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{esc(title)}">
+<meta name="twitter:description" content="{esc(desc)}">
+<meta name="twitter:image" content="{SITE}/assets/img/og.png">
+{jsonld(lang, page, title, desc)}
 <meta name="theme-color" content="#f8fdff">
 <link rel="icon" href="{up}assets/img/favicon.png" type="image/png">\n<link rel="apple-touch-icon" href="{up}assets/img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -176,7 +230,7 @@ def brand_panel(up, sub, tiles, note=None):
     note_html = f'<p class="bp-note">{note}</p>' if note else ""
     return f"""<div class="brand-panel">
   <div class="bp-top"><div><div class="bp-title">MoriPay</div><div class="bp-sub">{sub}</div></div><span class="pill">AVAILABLE IN KOREA</span></div>
-  <div class="bp-card"><img src="{up}moripay_card.png" alt="MoriPay card" width="200" height="318" loading="lazy"></div>
+  <div class="bp-card"><img src="{up}moripay_card.png" alt="MoriPay card" width="200" height="318"></div>
   <div class="bp-tiles">{tiles_html}</div>{note_html}
 </div>"""
 
@@ -402,6 +456,58 @@ def build_about(lang):
 BUILDERS = {"index": build_index, "services": build_services, "guide": build_guide, "about": build_about}
 
 
+
+def write_extras():
+    with open(os.path.join(ROOT, "robots.txt"), "w", encoding="utf-8") as f:
+        f.write(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
+    urls = []
+    for lang in LANGS:
+        for page in PAGES:
+            alts = "".join(
+                f'\n    <xhtml:link rel="alternate" hreflang="{l}" href="{page_url(l, page)}"/>' for l in LANGS
+            ) + f'\n    <xhtml:link rel="alternate" hreflang="x-default" href="{page_url("ko", page)}"/>'
+            urls.append(f"  <url>\n    <loc>{page_url(lang, page)}</loc>{alts}\n  </url>")
+    with open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8") as f:
+        f.write('<?xml version="1.0" encoding="UTF-8"?>\n'
+                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
+                + "\n".join(urls) + "\n</urlset>\n")
+    llms = [
+        "# K&2P (케이앤투피)",
+        "",
+        "> K&2P Co., Ltd. is a Seoul-based travel tech company. It operates MoriPay, an all-in-one prepaid travel card",
+        "> for international visitors to Korea: mobile top-up in foreign currency, payments at Shinhan Card merchants",
+        "> nationwide, and EZL public transit, plus Korea eSIM, travel insurance and airport pickup in the app.",
+        "",
+        "## Pages",
+    ]
+    for lang, label in (("ko", "Korean"), ("en", "English"), ("ja", "Japanese")):
+        for page in PAGES:
+            title = BUILDERS[page](lang)[0]["title"]
+            llms.append(f"- [{title}]({page_url(lang, page)}) ({label})")
+    llms += ["", "## Related", f"- [MoriPay official site]({MORIPAY})", ""]
+    with open(os.path.join(ROOT, "llms.txt"), "w", encoding="utf-8") as f:
+        f.write("\n".join(llms))
+    # 404 page (GitHub Pages serves /404.html); absolute asset paths so it works at any depth
+    body404 = """
+<section class="page-hero"><div class="container">
+  <span class="eyebrow">404</span>
+  <h1>페이지를 찾을 수 없습니다<br><span style="font-size:.5em;font-weight:600;color:var(--color-text-secondary)">Page not found · ページが見つかりません</span></h1>
+  <div class="hero-actions">
+    <a class="btn btn-primary" href="/">홈으로</a>
+    <a class="btn btn-secondary" href="/en/">English</a>
+    <a class="btn btn-secondary" href="/ja/">日本語</a>
+  </div>
+</div></section>
+"""
+    doc = head("ko", "index", "404 | K&2P", "페이지를 찾을 수 없습니다.") + header("ko", "index") + body404 + footer("ko")
+    doc = doc.replace('<link rel="canonical" href="https://kn2p.co.kr/">', '<meta name="robots" content="noindex">')
+    doc = "\n".join(l for l in doc.split("\n") if 'hreflang=' not in l or 'lang-switch' in l)
+    for a in ('href="assets/', 'src="assets/', 'href="logo_', 'src="logo_', 'href="index.html', 'href="services.html', 'href="guide.html', 'href="about.html', 'href="en/', 'href="ja/'):
+        doc = doc.replace(a, a.replace('="', '="/'))
+    with open(os.path.join(ROOT, "404.html"), "w", encoding="utf-8") as f:
+        f.write(doc)
+
+
 def main():
     count = 0
     for lang in LANGS:
@@ -413,7 +519,8 @@ def main():
             with open(os.path.join(outdir, page + ".html"), "w", encoding="utf-8") as f:
                 f.write(doc)
             count += 1
-    print(f"built {count} pages")
+    write_extras()
+    print(f"built {count} pages + robots.txt, sitemap.xml, llms.txt, 404.html")
 
 
 if __name__ == "__main__":

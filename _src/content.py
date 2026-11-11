@@ -99,7 +99,7 @@ HOME = {
         "flag_features": [
             ("payments", "외화 모바일 간편 충전", "외국 신용카드 및 결제망으로 외화를 즉시 원화 선불 잔액으로 충전하여 현금 없이 편리하게 결제합니다."),
             ("contactless", "전국 신한카드 가맹점 & 이즐 교통카드", "전국 식당, 쇼핑몰, 편의점 결제는 물론 지하철과 시내버스까지 실물카드 한 장으로 해결합니다."),
-            ("sync_alt", "모리페이 유저 간 실시간 잔액 송금", "동행자와 함께하는 여행에서 복잡한 계좌이체나 정산 절차 없이 실시간으로 원화 잔액을 송금합니다."),
+            ("sync_alt", "모리페이 유저 간 실시간 잔액 송금", "동행자와 함께하는 여행에서 복잡한 계좌이체나 정산 절차 없이 실시간으로 원화 잔액을 송금합니다. ※ 송금된 잔액은 환불되지 않습니다."),
         ],
         "panel_tiles": [("currency_exchange", "외화 충전"), ("credit_card", "카드 결제"), ("directions_subway", "대중교통")],
         "panel_note": "외국인 관광객의 더 편리한 한국 여행을 돕는 결제 플랫폼",
@@ -120,7 +120,7 @@ HOME = {
     },
     "en": {
         "title": "K&2P | Travel Tech for International Visitors to Korea",
-        "desc": "K&2P operates MoriPay, an all-in-one prepaid travel card for international visitors to Korea that combines mobile top-up in foreign currency, payments at Shinhan Card merchants nationwide, and EZL public transit.",
+        "desc": "K&2P runs MoriPay, an all-in-one prepaid travel card for visitors to Korea: mobile FX top-up, Shinhan Card merchant payments and EZL public transit.",
         "eyebrow": "Travel tech for visitors to Korea",
         "h1": "The smart travel card<br>for visitors to Korea: <span class=\"grad\">MoriPay</span>",
         "lead": "K&2P runs MoriPay, an all-in-one prepaid travel card that brings together mobile top-up in your own currency, payments at Shinhan Card merchants across Korea, and EZL public transit, so international travelers can get around Korea with ease.",
@@ -145,7 +145,7 @@ HOME = {
         "flag_features": [
             ("payments", "Easy mobile top-up", "Top up a prepaid KRW balance instantly with your foreign credit card or payment network, and pay without cash."),
             ("contactless", "Shinhan Card merchants & EZL transit", "One physical card covers restaurants, shopping malls and convenience stores nationwide, plus the subway and city buses."),
-            ("sync_alt", "Real-time transfers between MoriPay users", "Traveling with friends? Send KRW balance to each other in real time, with no bank transfers or settling up."),
+            ("sync_alt", "Real-time transfers between MoriPay users", "Traveling with friends? Send KRW balance to each other in real time, with no bank transfers or settling up. *Transferred balances are non-refundable."),
         ],
         "panel_tiles": [("currency_exchange", "FX top-up"), ("credit_card", "Card payments"), ("directions_subway", "Public transit")],
         "panel_note": "A payment platform that makes travel in Korea easier for international visitors",
@@ -191,7 +191,7 @@ HOME = {
         "flag_features": [
             ("payments", "かんたん外貨モバイルチャージ", "海外発行のクレジットカードや決済手段で外貨をすぐにウォンのプリペイド残高へチャージし、現金なしで支払えます。"),
             ("contactless", "新韓カード加盟店 & EZL交通カード", "全国の飲食店、ショッピングモール、コンビニでの支払いはもちろん、地下鉄や市内バスまで実物カード一枚で。"),
-            ("sync_alt", "MoriPayユーザー間のリアルタイム送金", "同行者との旅行でも、面倒な振込や精算なしに、ウォン残高をリアルタイムで送金できます。"),
+            ("sync_alt", "MoriPayユーザー間のリアルタイム送金", "同行者との旅行でも、面倒な振込や精算なしに、ウォン残高をリアルタイムで送金できます。※送金した残高は返金できません。"),
         ],
         "panel_tiles": [("currency_exchange", "外貨チャージ"), ("credit_card", "カード決済"), ("directions_subway", "公共交通")],
         "panel_note": "海外からの旅行者の韓国旅行をもっと便利にする決済プラットフォーム",
@@ -215,7 +215,7 @@ HOME = {
 # ─────────────────────────────────────────────────────────────── SERVICES
 SERVICES = {
     "ko": {
-        "title": "서비스 | 케이앤투피 K&2P",
+        "title": "MoriPay 서비스 소개: 외화 충전·카드 결제·eSIM·공항 픽업 | 케이앤투피 K&2P",
         "desc": "MoriPay 외화 충전·신한카드 가맹점 결제·이즐 대중교통과 Korea eSIM, 여행자 보험, 공항 송영까지. 방한 외국인 여행객을 위한 K&2P 서비스를 소개합니다.",
         "eyebrow": "Korean Travel Companion",
         "h1": "K&2P 서비스",
@@ -249,8 +249,8 @@ SERVICES = {
         "cta_btn": "이용가이드 보기",
     },
     "en": {
-        "title": "Services | K&2P",
-        "desc": "MoriPay FX top-up, Shinhan Card merchant payments and EZL transit, plus Korea eSIM, travel insurance and airport pickup. Discover K&2P services for international visitors to Korea.",
+        "title": "MoriPay Services: FX Top-up, Payments, eSIM | K&2P",
+        "desc": "MoriPay FX top-up, Shinhan Card payments and EZL transit, plus Korea eSIM, travel insurance and airport pickup for visitors to Korea.",
         "eyebrow": "Korean Travel Companion",
         "h1": "K&2P Services",
         "lead": "Technology built for international travelers, connecting every moment of your stay in Korea.",
@@ -283,7 +283,7 @@ SERVICES = {
         "cta_btn": "Open the user guide",
     },
     "ja": {
-        "title": "サービス | K&2P（ケーアンドツーピー）",
+        "title": "MoriPayのサービス：外貨チャージ・カード決済・eSIM・空港送迎 | K&2P",
         "desc": "MoriPayの外貨チャージ・新韓カード加盟店決済・EZL公共交通に加え、Korea eSIM、海外旅行保険、空港送迎まで。訪韓旅行者のためのK&2Pのサービスをご紹介します。",
         "eyebrow": "Korean Travel Companion",
         "h1": "K&2Pのサービス",
@@ -321,16 +321,16 @@ SERVICES = {
 # ─────────────────────────────────────────────────────────────── GUIDE
 GUIDE = {
     "ko": {
-        "title": "이용가이드 | 케이앤투피 K&2P",
+        "title": "MoriPay 이용가이드: 출국 전 준비부터 현지 결제까지 | 케이앤투피 K&2P",
         "desc": "MoriPay 앱 가입, 실물카드 수령, 외화 충전, 한국 현지 결제와 대중교통 이용 방법, 자주 묻는 질문을 안내합니다.",
         "eyebrow": "MoriPay User Guide",
         "h1": "출국 전 준비부터<br>현지 결제까지",
-        "lead": "환전소에 줄 서지 않고 스마트폰으로 충전하여 한국 어디서나 결제하세요. 출국 전 3분 준비로 완성되는 편리한 여행 흐름을 안내합니다.",
+        "lead": "환전소에 줄 서지 않고 스마트폰으로 충전하여 한국 어디서나 결제하세요. 출국 전에 미리 준비해 두면 더 편리한 여행 흐름을 안내합니다.",
         "steps_eyebrow": "Step by Step",
         "steps_h2": "손쉬운 4단계 이용 흐름",
         "steps_p": "출국 전 자택에서 카드를 수령하고 잔액을 충전하면, 한국 도착 즉시 모든 결제와 대중교통을 이용할 수 있습니다.",
         "steps": [
-            ("출국 전 · 1분", "앱 다운로드 & 회원가입", "MoriPay 앱을 설치하고 이메일 인증으로 간편하게 가입합니다. 복잡한 서류 절차 없이 즉시 이용 준비가 완료됩니다.", "verified_user", "간편 본인 인증 지원"),
+            ("출국 전", "앱 다운로드 & 회원가입", "MoriPay 앱을 설치하고 앱 안내에 따라 회원가입과 본인 인증을 진행합니다.", "verified_user", "앱에서 회원가입·본인 인증"),
             ("출국 전 · 사전 배송", "실물 카드 신청 및 수령", "온라인 판매처에서 실물 선불카드를 주문하여 자택으로 사전 수령합니다. 현지 공항에 도착해 수령 대기줄에 서지 않아도 됩니다.", "local_shipping", "외국 현지 자택 배송 지원"),
             ("출국 전 · 스마트폰", "외화 충전 & 부가서비스", "외국 신용카드로 외화를 실시간 환율로 충전하고, 5G 무제한 eSIM, 여행자보험 가입, 공항 픽업 택시까지 앱에서 원스톱으로 예약합니다.", "bolt", "투명한 실시간 환율 적용"),
             ("한국 체류 중", "도착 즉시 결제 & 이동", "공항 입국장에서 전용 피켓 미팅 후 숙소로 이동하고, 전국 신한카드 가맹점 어디서나 IC 카드로 결제하며 지하철·버스를 탑승합니다.", "contactless", "전국 신한카드 결제망 + 이즐 교통"),
@@ -356,6 +356,7 @@ GUIDE = {
             ("공항 송영(픽업 택시) 서비스는 어떻게 이용하나요?", "인천국제공항(T1/T2) 및 김포국제공항에서 서울 시내 목적지까지 정액 요금제로 운영됩니다. 앱에서 목적지를 지정하고 MoriPay 잔액으로 사전 결제하면, 입국장에서 기사님이 전용 피켓으로 맞이하며 대형 수하물 이동까지 도와드립니다. 항공편 지연 시 실시간 메신저 지원을 제공합니다."),
             ("eSIM은 출국 전에 미리 등록할 수 있나요?", "네, 출국 전 앱에서 원하는 일정의 플랜(데이터 무제한, 한국 010 번호 옵션 등)을 선택하여 구매하시면 즉시 QR 코드가 발급됩니다. 스마트폰에 미리 eSIM을 등록해 두고, 한국 공항에 착륙한 직후 회선을 활성화하면 바로 5G 데이터를 사용할 수 있습니다."),
             ("카드를 분실했을 때 잔액을 보호받을 수 있나요?", "카드를 분실하신 즉시 MoriPay 앱의 카드 관리 메뉴에서 '카드 일시정지'를 켜시면 오프라인 결제가 즉시 차단됩니다. 보관 중인 선불 잔액은 회원님의 앱 계정에 안전하게 보존됩니다."),
+            ("다른 MoriPay 회원에게 송금한 잔액을 환불받을 수 있나요?", "아니요. MoriPay 회원 간 실시간 잔액 송금은 완료 즉시 받는 분의 잔액에 반영되며, 송금된 잔액은 환불되지 않습니다. 받는 분과 금액을 꼭 확인한 뒤 송금해 주세요."),
         ],
         "cta_h2": "지금 MoriPay와 함께<br>더 편리한 한국 여행을 시작하세요",
         "cta_p": "외국인 여행자를 위한 올인원 트래블 솔루션. 공식 서비스 사이트에서 상세 혜택과 이벤트 소식을 확인하실 수 있습니다.",
@@ -363,16 +364,16 @@ GUIDE = {
         "cta_btn2": "서비스 살펴보기",
     },
     "en": {
-        "title": "User Guide | K&2P",
+        "title": "MoriPay User Guide: Sign-up, Top-up, Payments & FAQ | K&2P",
         "desc": "How to sign up for MoriPay, receive your card, top up in foreign currency, pay and ride public transit in Korea, plus frequently asked questions.",
         "eyebrow": "MoriPay User Guide",
         "h1": "From pre-trip setup<br>to paying in Korea",
-        "lead": "No queues at the exchange counter: top up on your phone and pay anywhere in Korea. Here's how a few minutes of setup before you fly makes your whole trip easier.",
+        "lead": "No queues at the exchange counter: top up on your phone and pay anywhere in Korea. Here's how getting set up before you fly makes your whole trip easier.",
         "steps_eyebrow": "Step by Step",
         "steps_h2": "Four easy steps",
         "steps_p": "Receive your card at home and top up before you leave, and you're ready to pay and ride public transit the moment you land.",
         "steps": [
-            ("Before you go · 1 min", "Download the app & sign up", "Install the MoriPay app and sign up with email verification. You're ready to go without complicated paperwork.", "verified_user", "Simple identity verification"),
+            ("Before you go", "Download the app & sign up", "Install the MoriPay app and follow the in-app steps to sign up and verify your identity.", "verified_user", "Sign-up & verification in the app"),
             ("Before you go · delivery", "Order & receive your card", "Order the physical prepaid card from an online store and receive it at home in advance, so there's no pickup queue at the airport.", "local_shipping", "Delivery to your home country"),
             ("Before you go · on your phone", "Top up & add services", "Top up in foreign currency at the real-time exchange rate with your overseas credit card, and book an unlimited 5G eSIM, travel insurance and an airport pickup in the same app.", "bolt", "Transparent real-time rates"),
             ("During your stay", "Pay & get around from day one", "Meet your driver at arrivals and head to your hotel, then pay by IC card at Shinhan Card merchants anywhere in Korea and hop on the subway or bus.", "contactless", "Shinhan Card network + EZL transit"),
@@ -398,6 +399,7 @@ GUIDE = {
             ("How does the airport pickup service work?", "It runs at fixed fares from Incheon International Airport (T1/T2) and Gimpo International Airport to destinations in Seoul. Set your destination in the app and prepay with your MoriPay balance; your driver will greet you at arrivals with a name board and help with large luggage. Real-time messenger support is available if your flight is delayed."),
             ("Can I set up the eSIM before I leave?", "Yes. Choose a plan for your travel dates in the app before departure (unlimited data, optional Korean 010 number, etc.) and a QR code is issued right away. Install the eSIM on your phone in advance and activate the line after landing in Korea to start using 5G data."),
             ("Is my balance protected if I lose my card?", "As soon as you notice, turn on \"Pause card\" in the card menu of the MoriPay app and offline payments are blocked immediately. Your prepaid balance stays safely in your app account."),
+            ("Can I get a refund on balance I sent to another MoriPay user?", "No. Real-time balance transfers between MoriPay users are credited to the recipient immediately, and transferred balances are non-refundable. Please double-check the recipient and amount before sending."),
         ],
         "cta_h2": "Start an easier trip to Korea<br>with MoriPay today",
         "cta_p": "An all-in-one travel solution for international travelers. See full benefits and promotions on the official website.",
@@ -405,16 +407,16 @@ GUIDE = {
         "cta_btn2": "Explore services",
     },
     "ja": {
-        "title": "ご利用ガイド | K&2P（ケーアンドツーピー）",
+        "title": "MoriPayご利用ガイド：登録・チャージ・決済・よくある質問 | K&2P",
         "desc": "MoriPayアプリの登録、実物カードの受け取り、外貨チャージ、韓国での支払いや公共交通の利用方法、よくあるご質問をご案内します。",
         "eyebrow": "MoriPay User Guide",
         "h1": "出発前の準備から<br>韓国での支払いまで",
-        "lead": "両替所に並ばず、スマートフォンでチャージして韓国のどこでも支払いを。出発前の数分の準備で完成する、快適な旅の流れをご案内します。",
+        "lead": "両替所に並ばず、スマートフォンでチャージして韓国のどこでも支払いを。出発前に準備しておくと、もっと快適になる旅の流れをご案内します。",
         "steps_eyebrow": "Step by Step",
         "steps_h2": "かんたん4ステップ",
         "steps_p": "出発前にご自宅でカードを受け取り、残高をチャージしておけば、韓国到着後すぐに支払いも公共交通も利用できます。",
         "steps": [
-            ("出発前 · 1分", "アプリのダウンロード & 会員登録", "MoriPayアプリをインストールし、メール認証でかんたんに登録。面倒な書類手続きなしで、すぐに利用準備が整います。", "verified_user", "かんたん本人確認に対応"),
+            ("出発前", "アプリのダウンロード & 会員登録", "MoriPayアプリをインストールし、アプリの案内に従って会員登録と本人確認を行います。", "verified_user", "アプリで会員登録・本人確認"),
             ("出発前 · 事前配送", "実物カードの申し込み・受け取り", "オンラインストアで実物のプリペイドカードを注文し、ご自宅で事前に受け取れます。現地空港で受け取りの列に並ぶ必要はありません。", "local_shipping", "ご自宅への配送に対応"),
             ("出発前 · スマートフォン", "外貨チャージ & 付加サービス", "海外発行のクレジットカードで外貨をリアルタイムレートでチャージし、5G使い放題eSIM、旅行保険、空港送迎タクシーまでアプリでまとめて予約できます。", "bolt", "わかりやすいリアルタイムレート"),
             ("韓国滞在中", "到着後すぐに支払い & 移動", "空港の到着ロビーでネームボードのお出迎えを受けてホテルへ。全国の新韓カード加盟店でICカード決済をし、地下鉄・バスにも乗車できます。", "contactless", "新韓カード決済ネットワーク + EZL交通"),
@@ -440,6 +442,7 @@ GUIDE = {
             ("空港送迎（ピックアップタクシー）はどのように利用しますか？", "仁川国際空港（T1/T2）・金浦国際空港からソウル市内の目的地まで、定額料金で運行しています。アプリで目的地を指定してMoriPay残高で事前決済すると、到着ロビーでドライバーがネームボードでお出迎えし、大きな荷物の移動もお手伝いします。フライト遅延時はリアルタイムのメッセンジャーでサポートします。"),
             ("eSIMは出発前に登録できますか？", "はい。出発前にアプリでご旅行日程に合ったプラン（データ使い放題、韓国010番号オプションなど）を選んで購入すると、すぐにQRコードが発行されます。スマートフォンにeSIMを登録しておき、韓国の空港に着陸後に回線を有効にすれば、すぐに5Gデータを使えます。"),
             ("カードを紛失した場合、残高は守られますか？", "紛失に気づいたらすぐにMoriPayアプリのカード管理メニューで「カード一時停止」をオンにしてください。オフライン決済がすぐにブロックされます。プリペイド残高はお客様のアプリアカウントに安全に保管されます。"),
+            ("他のMoriPayユーザーに送金した残高は返金できますか？", "いいえ。MoriPayユーザー間のリアルタイム送金は、完了と同時に受取人の残高に反映され、送金した残高は返金できません。送金前に受取人と金額を必ずご確認ください。"),
         ],
         "cta_h2": "MoriPayで、もっと快適な<br>韓国旅行をはじめましょう",
         "cta_p": "海外からの旅行者のためのオールインワン・トラベルソリューション。詳しい特典やキャンペーン情報は公式サイトでご確認ください。",
@@ -451,7 +454,7 @@ GUIDE = {
 # ─────────────────────────────────────────────────────────────── ABOUT
 ABOUT = {
     "ko": {
-        "title": "회사소개 | 케이앤투피 K&2P",
+        "title": "회사소개: 방한 외국인 트래블테크 기업 케이앤투피 | K&2P",
         "desc": "기술로 여행의 가치를 더하는 트래블테크 기업 K&2P의 미션과 비전, 핵심 역량, 대표 서비스 MoriPay를 소개합니다.",
         "eyebrow": "Travel Tech Innovator",
         "h1": "기술로 여행의 가치를 더하고,<br>국경 없는 심리스한 연결을 꿈꿉니다.",
@@ -472,7 +475,7 @@ ABOUT = {
         "pr_list": [
             "외화 모바일 간편 충전 및 무기명 실물 선불카드",
             "전국 온·오프라인 신한카드 결제 및 이즐(EZL) 대중교통 통합",
-            "Korea eSIM, 안심 해외 여행자 보험, 회원 간 실시간 잔액 송금",
+            "Korea eSIM, 안심 해외 여행자 보험, 회원 간 실시간 잔액 송금 (송금된 잔액은 환불 불가)",
         ],
         "pr_btn": "MoriPay 서비스 보기",
         "ceo_eyebrow": "CEO Message",
@@ -492,7 +495,7 @@ ABOUT = {
         ],
     },
     "en": {
-        "title": "Company | K&2P",
+        "title": "About K&2P: Travel Tech Company Behind MoriPay | K&2P",
         "desc": "Meet K&2P, a travel tech company adding value to travel through technology: our mission and vision, core strengths, and our flagship service MoriPay.",
         "eyebrow": "Travel Tech Innovator",
         "h1": "Adding value to travel through technology,<br>connecting people seamlessly across borders.",
@@ -513,7 +516,7 @@ ABOUT = {
         "pr_list": [
             "Easy mobile top-up in foreign currency and an anonymous physical prepaid card",
             "Shinhan Card payments online and offline nationwide, plus EZL public transit",
-            "Korea eSIM, travel insurance and real-time balance transfers between members",
+            "Korea eSIM, travel insurance and real-time balance transfers between members (transferred balances are non-refundable)",
         ],
         "pr_btn": "See MoriPay services",
         "ceo_eyebrow": "CEO Message",
@@ -533,7 +536,7 @@ ABOUT = {
         ],
     },
     "ja": {
-        "title": "会社概要 | K&2P（ケーアンドツーピー）",
+        "title": "会社概要：MoriPayを運営するトラベルテック企業 | K&2P（ケーアンドツーピー）",
         "desc": "テクノロジーで旅に価値をプラスするトラベルテック企業K&2Pのミッション・ビジョン、強み、主力サービスMoriPayをご紹介します。",
         "eyebrow": "Travel Tech Innovator",
         "h1": "テクノロジーで旅に価値を。<br>国境のないシームレスなつながりを目指して。",
@@ -554,7 +557,7 @@ ABOUT = {
         "pr_list": [
             "外貨のかんたんモバイルチャージと無記名の実物プリペイドカード",
             "全国のオンライン・店舗での新韓カード決済とEZL公共交通に対応",
-            "Korea eSIM、海外旅行保険、会員間のリアルタイム残高送金",
+            "Korea eSIM、海外旅行保険、会員間のリアルタイム残高送金（送金した残高は返金不可）",
         ],
         "pr_btn": "MoriPayのサービスを見る",
         "ceo_eyebrow": "CEO Message",
